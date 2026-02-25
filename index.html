@@ -138,43 +138,110 @@
             </div>
           </section>
 
-          <!-- Dashboard empty state -->
+          <!-- Dashboard jobs -->
           <section
-            id="jr-dashboard-empty"
+            id="jr-dashboard-section"
             class="jr-section-card"
             hidden
-            aria-label="Dashboard empty state"
+            aria-label="Dashboard jobs"
           >
-            <div class="jr-card jr-card--subtle">
-              <div class="jr-card__body jr-stack-16">
-                <h3 class="jr-heading-sm">No jobs yet</h3>
-                <p class="jr-body-sm">
-                  In the next step, you will load a realistic dataset.
-                </p>
+            <div class="jr-card">
+              <div class="jr-card__body">
+                <div class="jr-filter-bar">
+                  <div
+                    class="jr-filter-bar__group jr-filter-bar__keyword"
+                  >
+                    <label for="jr-filter-keyword" class="jr-label">Search</label>
+                    <input
+                      id="jr-filter-keyword"
+                      class="jr-input"
+                      type="text"
+                      placeholder="Search by title or company"
+                    />
+                  </div>
+                  <div class="jr-filter-bar__group">
+                    <label for="jr-filter-location" class="jr-label"
+                      >Location</label
+                    >
+                    <select id="jr-filter-location" class="jr-input">
+                      <option value="">All</option>
+                    </select>
+                  </div>
+                  <div class="jr-filter-bar__group">
+                    <label for="jr-filter-mode" class="jr-label">Mode</label>
+                    <select id="jr-filter-mode" class="jr-input">
+                      <option value="">All</option>
+                      <option value="Remote">Remote</option>
+                      <option value="Hybrid">Hybrid</option>
+                      <option value="Onsite">Onsite</option>
+                    </select>
+                  </div>
+                  <div class="jr-filter-bar__group">
+                    <label for="jr-filter-experience" class="jr-label"
+                      >Experience</label
+                    >
+                    <select id="jr-filter-experience" class="jr-input">
+                      <option value="">All</option>
+                      <option value="Fresher">Fresher</option>
+                      <option value="0-1">0-1</option>
+                      <option value="1-3">1-3</option>
+                      <option value="3-5">3-5</option>
+                    </select>
+                  </div>
+                  <div class="jr-filter-bar__group">
+                    <label for="jr-filter-source" class="jr-label"
+                      >Source</label
+                    >
+                    <select id="jr-filter-source" class="jr-input">
+                      <option value="">All</option>
+                      <option value="LinkedIn">LinkedIn</option>
+                      <option value="Naukri">Naukri</option>
+                      <option value="Indeed">Indeed</option>
+                    </select>
+                  </div>
+                  <div class="jr-filter-bar__group">
+                    <label for="jr-filter-sort" class="jr-label">Sort</label>
+                    <select id="jr-filter-sort" class="jr-input">
+                      <option value="latest">Latest</option>
+                      <option value="oldest">Oldest</option>
+                    </select>
+                  </div>
+                </div>
+                <div
+                  id="jr-dashboard-empty-message"
+                  class="jr-empty-message"
+                  hidden
+                >
+                  No jobs match your search.
+                </div>
+                <div id="jr-dashboard-jobs" class="jr-jobs-list"></div>
               </div>
             </div>
           </section>
 
-          <!-- Saved empty state -->
+          <!-- Saved jobs -->
           <section
-            id="jr-saved-empty"
+            id="jr-saved-section"
             class="jr-section-card"
             hidden
             aria-label="Saved jobs empty state"
           >
             <div class="jr-card jr-card--subtle">
               <div class="jr-card__body jr-stack-16">
-                <h3 class="jr-heading-sm">Nothing saved yet</h3>
-                <p class="jr-body-sm">
-                  Jobs you intentionally mark as worth revisiting will appear here in the next step.
-                </p>
+                <div id="jr-saved-empty-message" class="jr-stack-8">
+                  <h3 class="jr-heading-sm">Nothing saved yet</h3>
+                  <p class="jr-body-sm">
+                    When you mark a role as important, it will be pinned here for quiet review later.
+                  </p>
+                </div>
+                <div id="jr-saved-jobs" class="jr-jobs-list"></div>
               </div>
             </div>
           </section>
 
           <!-- Digest empty state -->
           <section
-            id="jr-digest-empty"
+            id="jr-digest-section"
             class="jr-section-card"
             hidden
             aria-label="Digest empty state"
@@ -191,7 +258,7 @@
 
           <!-- Proof placeholder -->
           <section
-            id="jr-proof-placeholder"
+            id="jr-proof-section"
             class="jr-section-card"
             hidden
             aria-label="Proof artifacts placeholder"
@@ -211,6 +278,34 @@
           <div class="jr-route-secondary-placeholder"></div>
         </aside>
       </main>
+
+      <!-- Job details modal -->
+      <div class="jr-modal-backdrop" id="jr-job-modal" hidden>
+        <div class="jr-modal">
+          <div class="jr-card">
+            <div class="jr-card__body jr-modal__body">
+              <div>
+                <h2 class="jr-heading-md" id="jr-modal-title"></h2>
+                <p class="jr-body-sm" id="jr-modal-company"></p>
+              </div>
+              <p class="jr-body-sm" id="jr-modal-description"></p>
+              <div>
+                <p class="jr-body-xs">Key skills</p>
+                <div class="jr-modal__skills" id="jr-modal-skills"></div>
+              </div>
+              <div class="jr-modal__footer">
+                <button
+                  type="button"
+                  class="jr-button jr-button--secondary"
+                  id="jr-modal-close"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- Proof Footer -->
       <footer class="jr-footer">
