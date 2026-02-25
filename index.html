@@ -77,7 +77,134 @@
           <div class="jr-route-placeholder" aria-live="polite">
             <h2 class="jr-heading-md" id="jr-route-heading"></h2>
             <p class="jr-body-sm" id="jr-route-subtext"></p>
+            <button
+              type="button"
+              class="jr-button jr-button--primary jr-route-cta"
+              id="jr-route-cta"
+              hidden
+            ></button>
           </div>
+
+          <!-- Settings preferences placeholder -->
+          <section
+            id="jr-settings-section"
+            class="jr-settings-section jr-stack-24"
+            hidden
+          >
+            <div class="jr-card">
+              <header class="jr-card__header">
+                <h3 class="jr-heading-sm">Preferences</h3>
+              </header>
+              <div class="jr-card__body jr-stack-16">
+                <div class="jr-form-group">
+                  <label for="jr-role-keywords" class="jr-label">Role keywords</label>
+                  <input
+                    id="jr-role-keywords"
+                    class="jr-input"
+                    type="text"
+                    placeholder="e.g. Product Manager, Data Analyst"
+                  />
+                </div>
+                <div class="jr-form-group">
+                  <label for="jr-locations" class="jr-label">Preferred locations</label>
+                  <input
+                    id="jr-locations"
+                    class="jr-input"
+                    type="text"
+                    placeholder="e.g. Berlin, Remote within EU"
+                  />
+                </div>
+                <div class="jr-form-group">
+                  <label for="jr-mode" class="jr-label">Mode</label>
+                  <select id="jr-mode" class="jr-input">
+                    <option>Remote</option>
+                    <option>Hybrid</option>
+                    <option>Onsite</option>
+                  </select>
+                </div>
+                <div class="jr-form-group">
+                  <label for="jr-experience" class="jr-label">Experience level</label>
+                  <select id="jr-experience" class="jr-input">
+                    <option>Entry</option>
+                    <option>Mid</option>
+                    <option>Senior</option>
+                    <option>Leadership</option>
+                  </select>
+                </div>
+                <p class="jr-body-xs jr-settings-note">
+                  These fields are placeholders only. In the next step, your preferences will be wired to real logic.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Dashboard empty state -->
+          <section
+            id="jr-dashboard-empty"
+            class="jr-section-card"
+            hidden
+            aria-label="Dashboard empty state"
+          >
+            <div class="jr-card jr-card--subtle">
+              <div class="jr-card__body jr-stack-16">
+                <h3 class="jr-heading-sm">No jobs yet</h3>
+                <p class="jr-body-sm">
+                  In the next step, you will load a realistic dataset.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Saved empty state -->
+          <section
+            id="jr-saved-empty"
+            class="jr-section-card"
+            hidden
+            aria-label="Saved jobs empty state"
+          >
+            <div class="jr-card jr-card--subtle">
+              <div class="jr-card__body jr-stack-16">
+                <h3 class="jr-heading-sm">Nothing saved yet</h3>
+                <p class="jr-body-sm">
+                  Jobs you intentionally mark as worth revisiting will appear here in the next step.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Digest empty state -->
+          <section
+            id="jr-digest-empty"
+            class="jr-section-card"
+            hidden
+            aria-label="Digest empty state"
+          >
+            <div class="jr-card jr-card--subtle">
+              <div class="jr-card__body jr-stack-16">
+                <h3 class="jr-heading-sm">Daily digest is not active yet</h3>
+                <p class="jr-body-sm">
+                  A calm summary of your most relevant roles will be generated here each morning at 9AM in a later step.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Proof placeholder -->
+          <section
+            id="jr-proof-placeholder"
+            class="jr-section-card"
+            hidden
+            aria-label="Proof artifacts placeholder"
+          >
+            <div class="jr-card jr-card--subtle">
+              <div class="jr-card__body jr-stack-16">
+                <h3 class="jr-heading-sm">Artifacts will be collected here</h3>
+                <p class="jr-body-sm">
+                  Use this space in the next step to gather clear evidence that the system behaves as expected.
+                </p>
+              </div>
+            </div>
+          </section>
         </section>
 
         <aside class="jr-main__secondary">

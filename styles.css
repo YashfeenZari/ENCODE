@@ -246,6 +246,22 @@ body.jr-app {
   max-width: var(--jr-text-max-width);
 }
 
+.jr-route-cta {
+  margin-top: var(--jr-space-24);
+}
+
+.jr-settings-section {
+  max-width: var(--jr-text-max-width);
+}
+
+.jr-settings-note {
+  color: rgba(17, 17, 17, 0.7);
+}
+
+.jr-section-card {
+  max-width: var(--jr-text-max-width);
+}
+
 .jr-route-secondary-placeholder {
   min-height: var(--jr-space-64);
 }

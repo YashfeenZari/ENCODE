@@ -2,33 +2,41 @@
   const routes = {
     "/": {
       path: "/",
-      title: "Dashboard",
-      subtitle: "This section will be built in the next step.",
+      title: "Stop Missing The Right Jobs.",
+      subtitle: "Precision-matched job discovery delivered daily at 9AM.",
+      ctaLabel: "Start Tracking",
+      ctaTo: "/settings",
+      section: "landing",
     },
     "/dashboard": {
       path: "/dashboard",
       title: "Dashboard",
-      subtitle: "This section will be built in the next step.",
+      subtitle: "No jobs yet. In the next step, you will load a realistic dataset.",
+      section: "dashboard",
     },
     "/saved": {
       path: "/saved",
       title: "Saved",
-      subtitle: "This section will be built in the next step.",
+      subtitle: "Jobs you save for later will appear here in the next step.",
+      section: "saved",
     },
     "/digest": {
       path: "/digest",
       title: "Digest",
-      subtitle: "This section will be built in the next step.",
+      subtitle: "A calm daily summary of your most relevant roles will be introduced here in the next step.",
+      section: "digest",
     },
     "/settings": {
       path: "/settings",
       title: "Settings",
-      subtitle: "This section will be built in the next step.",
+      subtitle: "Define your preferences so JobRadar knows what to track.",
+      section: "settings",
     },
     "/proof": {
       path: "/proof",
       title: "Proof",
-      subtitle: "This section will be built in the next step.",
+      subtitle: "This page will later collect artifacts that show the system working end to end.",
+      section: "proof",
     },
   };
 
@@ -41,7 +49,12 @@
 
   function getInitialPath() {
     const { pathname } = window.location;
-    return routes[pathname] ? pathname : "/";
+    // When opened directly via file://, always show the landing page.
+    if (window.location.protocol === "file:") {
+      return "/";
+    }
+    // For real HTTP routes, let unknown paths fall through to 404.
+    return routes[pathname] ? pathname : pathname;
   }
 
   function findRoute(path) {
@@ -57,8 +70,19 @@
     const routeHeadingEl = document.getElementById("jr-route-heading");
     const routeSubtextEl = document.getElementById("jr-route-subtext");
     const navLinks = document.querySelectorAll(".jr-nav__link");
+    const ctaButton = document.getElementById("jr-route-cta");
+    const settingsSection = document.getElementById("jr-settings-section");
+    const dashboardEmpty = document.getElementById("jr-dashboard-empty");
+    const savedEmpty = document.getElementById("jr-saved-empty");
+    const digestEmpty = document.getElementById("jr-digest-empty");
+    const proofPlaceholder = document.getElementById("jr-proof-placeholder");
 
-    if (!pageTitleEl || !pageSubtitleEl || !routeHeadingEl || !routeSubtextEl) {
+    if (
+      !pageTitleEl ||
+      !pageSubtitleEl ||
+      !routeHeadingEl ||
+      !routeSubtextEl
+    ) {
       return;
     }
 
@@ -66,6 +90,35 @@
     pageSubtitleEl.textContent = route.subtitle;
     routeHeadingEl.textContent = route.title;
     routeSubtextEl.textContent = route.subtitle;
+
+    if (ctaButton) {
+      if (route.ctaLabel && route.ctaTo && route.section === "landing") {
+        ctaButton.textContent = route.ctaLabel;
+        ctaButton.dataset.targetRoute = route.ctaTo;
+        ctaButton.hidden = false;
+        ctaButton.style.display = "";
+      } else {
+        ctaButton.hidden = true;
+        ctaButton.style.display = "none";
+        delete ctaButton.dataset.targetRoute;
+      }
+    }
+
+    if (settingsSection) {
+      settingsSection.hidden = route.section !== "settings";
+    }
+    if (dashboardEmpty) {
+      dashboardEmpty.hidden = route.section !== "dashboard";
+    }
+    if (savedEmpty) {
+      savedEmpty.hidden = route.section !== "saved";
+    }
+    if (digestEmpty) {
+      digestEmpty.hidden = route.section !== "digest";
+    }
+    if (proofPlaceholder) {
+      proofPlaceholder.hidden = route.section !== "proof";
+    }
 
     navLinks.forEach((link) => {
       const linkPath = link.getAttribute("data-route");
@@ -123,6 +176,7 @@
     const navLinks = document.querySelectorAll(".jr-nav__link");
     const toggle = document.querySelector(".jr-nav__toggle");
     const links = document.querySelector(".jr-nav__links");
+    const ctaButton = document.getElementById("jr-route-cta");
 
     navLinks.forEach((link) => {
       link.addEventListener("click", (event) => {
@@ -137,6 +191,15 @@
         const expanded = toggle.getAttribute("aria-expanded") === "true";
         toggle.setAttribute("aria-expanded", String(!expanded));
         links.classList.toggle("jr-nav__links--open", !expanded);
+      });
+    }
+
+    if (ctaButton) {
+      ctaButton.addEventListener("click", () => {
+        const target = ctaButton.dataset.targetRoute;
+        if (target) {
+          navigate(target);
+        }
       });
     }
   }
