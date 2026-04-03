@@ -1,0 +1,22 @@
+{
+  "name": "encode-lms-backend",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "description": "ENCODE LMS API (Node + MySQL)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "seed": "node scripts/seed.js",
+    "init-db": "node scripts/initDb.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.11.0",
+    "xlsx": "^0.18.5"
+  }
+}

@@ -1,0 +1,231 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6px);
+  animation: fadeIn 0.2s var(--ease);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.2), 0 8px 24px rgba(90, 79, 207, 0.15);
+  animation: slideUp 0.3s var(--ease);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--encode-text);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: background 0.2s var(--ease), transform 0.2s var(--ease);
+}
+
+.closeBtn:hover {
+  background: #fff;
+  transform: scale(1.05);
+}
+
+.thumb {
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  background: var(--encode-offwhite);
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  padding: 1.75rem 2rem 2rem;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+.badge {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
+}
+
+.badgeBeginner {
+  background: rgba(34, 197, 94, 0.15);
+  color: #15803d;
+}
+
+.badgeIntermediate {
+  background: rgba(249, 115, 22, 0.15);
+  color: #c2410c;
+}
+
+.badgeAdvanced {
+  background: rgba(139, 92, 246, 0.15);
+  color: #6d28d9;
+}
+
+.stats {
+  font-size: 0.8125rem;
+  color: var(--encode-text-muted);
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--encode-text);
+  margin: 0 0 0.75rem;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.ratingRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.125rem;
+}
+
+.star {
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.15);
+}
+
+.starFilled {
+  color: #f59e0b;
+}
+
+.ratingValue {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--encode-text);
+  margin-left: 0.25rem;
+}
+
+.studentCount {
+  font-size: 0.8125rem;
+  color: var(--encode-text-muted);
+}
+
+.desc {
+  font-size: 0.9375rem;
+  color: var(--encode-text-muted);
+  line-height: 1.6;
+  margin: 0 0 1.25rem;
+}
+
+.learnList {
+  margin-bottom: 1.25rem;
+}
+
+.learnList strong {
+  font-size: 0.8125rem;
+  color: var(--encode-text);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.learnList ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  font-size: 0.875rem;
+  color: var(--encode-text-muted);
+  line-height: 1.6;
+}
+
+.instructor {
+  font-size: 0.8125rem;
+  color: var(--encode-text-muted);
+  margin: 0 0 1.5rem;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.enrollBtn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  color: #fff !important;
+  background: linear-gradient(135deg, #5A4FCF 0%, #7c3aed 50%, #6366f1 100%);
+  box-shadow: 0 4px 16px rgba(90, 79, 207, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: transform 0.2s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.enrollBtn:hover {
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(90, 79, 207, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.detailLink {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--encode-dark);
+  transition: color 0.2s var(--ease);
+}
+
+.detailLink:hover {
+  color: #4338ca;
+}

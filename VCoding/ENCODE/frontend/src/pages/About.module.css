@@ -1,0 +1,16 @@
+.page {
+  padding: 2rem 0;
+}
+
+.title {
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+  color: var(--encode-dark);
+}
+
+.text {
+  margin: 0;
+  color: var(--encode-text);
+  max-width: 600px;
+  line-height: 1.6;
+}

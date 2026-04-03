@@ -1,0 +1,60 @@
+/* ENCODE Design System – premium SaaS (Stripe / Linear / Vercel) */
+:root {
+  --encode-lavender: #CDB4FF;
+  --encode-pink: #FFD6E8;
+  --encode-cream: #FFF9F5;
+  --encode-mint: #DFFFE2;
+  --encode-dark: #5A4FCF;
+  --encode-offwhite: #FDF8F5;
+  --encode-text: #1a1a2e;
+  --encode-text-muted: #64748b;
+  --encode-font: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-border: rgba(90, 79, 207, 0.12);
+  --glass-shadow: 0 8px 32px rgba(90, 79, 207, 0.08);
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.04), 0 4px 24px rgba(90, 79, 207, 0.06);
+  --shadow-hover: 0 12px 48px rgba(90, 79, 207, 0.12), 0 4px 16px rgba(0, 0, 0, 0.06);
+  --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--encode-font);
+  background: linear-gradient(180deg, #fafbff 0%, #ffffff 25%, #ffffff 100%);
+  min-height: 100vh;
+  color: var(--encode-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: var(--encode-dark);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  font-family: var(--encode-font);
+  cursor: pointer;
+}
+
+input, textarea {
+  font-family: var(--encode-font);
+}

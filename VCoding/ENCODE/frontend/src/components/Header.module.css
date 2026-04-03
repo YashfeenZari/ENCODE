@@ -1,0 +1,147 @@
+/* Glassmorphism navbar – premium SaaS */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--glass-border);
+  padding: 1rem 2rem;
+  transition: background 0.3s var(--ease), border-color 0.25s ease, box-shadow 0.3s var(--ease);
+}
+
+.headerScrolled {
+  background: rgba(255, 255, 255, 0.88);
+  border-bottom-color: rgba(90, 79, 207, 0.1);
+  box-shadow: var(--shadow-soft);
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+  transition: opacity 0.2s var(--ease);
+}
+
+.logoIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--encode-dark);
+}
+
+.logoIcon svg {
+  display: block;
+}
+
+.logo:hover {
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.logoText {
+  letter-spacing: -0.03em;
+}
+
+.logoEn {
+  color: var(--encode-dark);
+}
+
+.logoCode {
+  color: var(--encode-lavender);
+}
+
+.logo:hover .logoEn,
+.logo:hover .logoCode {
+  opacity: inherit;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav a {
+  color: var(--encode-text);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  transition: color 0.2s var(--ease);
+}
+
+.nav a:hover {
+  color: var(--encode-dark);
+}
+
+.navLink {
+  color: var(--encode-text);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  transition: color 0.2s var(--ease);
+}
+
+.navLink:hover {
+  color: var(--encode-dark);
+}
+
+.linkLogin {
+  color: var(--encode-text) !important;
+  font-weight: 500;
+}
+
+.linkLogin:hover {
+  color: var(--encode-dark) !important;
+}
+
+/* Register: gradient accent, soft shadow, smooth hover */
+.btnRegister {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem 1.375rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  border: none;
+  color: #fff !important;
+  text-decoration: none;
+  background: linear-gradient(135deg, #5A4FCF 0%, #7c3aed 50%, #6366f1 100%);
+  box-shadow: var(--shadow-soft), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.btnRegister:hover {
+  text-decoration: none;
+  transform: scale(1.02) translateY(-1px);
+  box-shadow: var(--shadow-hover), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.btnLogout {
+  background: transparent;
+  border: 1px solid var(--glass-border);
+  color: var(--encode-dark);
+  padding: 0.5rem 1.125rem;
+  border-radius: var(--radius-md);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  transition: background 0.2s var(--ease), border-color 0.2s ease, transform 0.2s var(--ease);
+}
+
+.btnLogout:hover {
+  background: rgba(90, 79, 207, 0.06);
+  border-color: rgba(90, 79, 207, 0.35);
+  transform: translateY(-1px);
+}
