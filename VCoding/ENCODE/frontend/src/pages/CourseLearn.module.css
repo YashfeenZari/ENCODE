@@ -35,9 +35,9 @@
 }
 
 .sidebar {
-  background: var(--encode-cream);
+  background: #ffffff;
   border: 1px solid rgba(90, 79, 207, 0.1);
-  box-shadow: 0 4px 20px rgba(90, 79, 207, 0.06);
+  box-shadow: var(--shadow-soft);
   border-radius: 12px;
   padding: 1rem;
   height: fit-content;
@@ -81,7 +81,7 @@
 }
 
 .lessonItem.active {
-  background: rgba(90, 79, 207, 0.1);
+  background: rgba(90, 79, 207, 0.08);
   color: var(--encode-dark);
   font-weight: 600;
 }
@@ -111,14 +111,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--encode-offwhite);
+  background: linear-gradient(180deg, #f4f6fc 0%, #fafbff 100%);
   color: var(--encode-text-muted);
   min-height: 280px;
 }
 
 .progressBar {
   height: 8px;
-  background: var(--encode-pink);
+  background: rgba(90, 79, 207, 0.12);
   border-radius: 4px;
   overflow: hidden;
 }
@@ -143,7 +143,7 @@
 
 .btnPrimary {
   background: var(--encode-dark);
-  color: var(--encode-cream);
+  color: #ffffff;
   border: none;
   padding: 0.6rem 1.25rem;
   border-radius: 8px;
@@ -192,9 +192,9 @@
 .notesArea {
   width: 100%;
   padding: 0.75rem;
-  border: 1px solid rgba(90, 79, 207, 0.2);
+  border: 1px solid rgba(90, 79, 207, 0.18);
   border-radius: 8px;
-  background: var(--encode-cream);
+  background: #ffffff;
   font-size: 0.95rem;
   resize: vertical;
 }

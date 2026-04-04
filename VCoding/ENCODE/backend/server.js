@@ -22,10 +22,24 @@ app.use('/api/progress', progressRoutes)
 
 app.use((err, req, res, next) => {
   console.error(err)
-  res.status(err.status || 500).json({ error: err.message || 'Internal server error' })
+  const msg =
+    err.message ||
+    err.code ||
+    (typeof err === 'string' ? err : null) ||
+    'Internal server error'
+  res.status(err.status || 500).json({ error: msg })
 })
 
 app.listen(PORT, async () => {
+  if (
+    !process.env.DATABASE_URL &&
+    process.env.DB_HOST &&
+    (!process.env.DB_PASSWORD || process.env.DB_PASSWORD === '')
+  ) {
+    console.warn(
+      '[ENCODE] DB_PASSWORD is empty — set it in backend/.env (same as Aiven/Render), then restart the server.'
+    )
+  }
   try {
     await getPool().getConnection()
     console.log(`ENCODE API running on port ${PORT}`)

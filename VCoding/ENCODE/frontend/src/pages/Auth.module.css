@@ -4,16 +4,28 @@
   align-items: center;
   min-height: 60vh;
   padding: 2rem;
+  /* Match Academy / body: cool off-white, not warm cream */
+  background: linear-gradient(
+    180deg,
+    rgba(250, 251, 255, 0.98) 0%,
+    #f4f6fc 45%,
+    #fafbff 100%
+  );
+  margin-left: -2rem;
+  margin-right: -2rem;
+  width: calc(100% + 4rem);
+  box-sizing: border-box;
 }
 
 .card {
-  background: var(--encode-cream);
-  border: 1px solid rgba(90, 79, 207, 0.12);
+  background: #ffffff;
+  border: 1px solid rgba(90, 79, 207, 0.1);
   border-radius: 12px;
   padding: 2rem;
   width: 100%;
   max-width: 400px;
-  box-shadow: 0 4px 24px rgba(90, 79, 207, 0.08);
+  box-shadow: var(--shadow-soft);
+  box-sizing: border-box;
 }
 
 .title {
@@ -43,9 +55,9 @@
 
 .form input {
   padding: 0.65rem 0.85rem;
-  border: 1px solid rgba(90, 79, 207, 0.2);
+  border: 1px solid rgba(90, 79, 207, 0.18);
   border-radius: 8px;
-  background: var(--encode-cream);
+  background: #ffffff;
 }
 
 .form input:focus {
@@ -56,7 +68,7 @@
 .submit {
   margin-top: 0.5rem;
   background: var(--encode-dark);
-  color: var(--encode-cream);
+  color: #ffffff;
   border: none;
   padding: 0.75rem;
   border-radius: 8px;
@@ -66,6 +78,16 @@
 
 .submit:hover {
   opacity: 0.92;
+}
+
+.error {
+  margin: 0 0 1rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  color: #b91c1c;
+  background: rgba(254, 226, 226, 0.85);
+  border: 1px solid rgba(248, 113, 113, 0.35);
 }
 
 .switch {

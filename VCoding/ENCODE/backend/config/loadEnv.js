@@ -16,11 +16,11 @@ try {
     if (idx === -1) return
     const key = trimmed.slice(0, idx).trim()
     const value = trimmed.slice(idx + 1).trim().replace(/^"|"$/g, '')
-    if (key && !(key in process.env)) {
+    // Let .env fill vars that are missing OR empty (empty shell vars e.g. DB_HOST= block old logic)
+    if (key && (process.env[key] === undefined || process.env[key] === '')) {
       process.env[key] = value
     }
   })
 } catch {
   // no .env file; ignore
 }
-
